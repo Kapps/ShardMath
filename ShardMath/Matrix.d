@@ -90,7 +90,7 @@ public:
 		return Result;
 	}
 
-	bool opEquals(in Matrix Other) const {
+	bool opEquals(in Matrix Other) @safe const pure nothrow {
 		for(size_t i = 0; i < ElementsSingleDim.length; i++)
 			if(!approxEqual(ElementsSingleDim[i], Other.ElementsSingleDim[i]))
 				return false;

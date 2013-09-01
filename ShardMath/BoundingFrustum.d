@@ -2,6 +2,7 @@
 import ShardMath.Matrix;
 import ShardMath.Vector;
 import ShardMath.BoundingBox;
+import std.typecons;
 
 /// Determines how an object overlaps another.
 enum Overlaps {
@@ -14,7 +15,7 @@ enum Overlaps {
 }
 
 /// Represents a frustum in 3D space, generally used for view culling.
-class BoundingFrustum  {
+@disable class BoundingFrustum  {
 
 public:	
 
@@ -29,12 +30,12 @@ public:
 	/// Params:
 	/// 	Object = The object to check for containment.
 	Overlaps Overlap(BoundingBox Object) {
-		return Overlaps.Fully; // TODO: Implement.
+		throw new NotImplementedError("Overlap");
 	}
 
 	/// Ditto
 	Overlaps Overlap(Vector3f Point) {
-		return Overlaps.Fully; // TODO: Implement.
+		throw new NotImplementedError("Overlap");
 	}
 
 	/// Gets or sets the matrix used for this BoundingFrustum. This is generally the view matrix multiplied by the projection matrix.

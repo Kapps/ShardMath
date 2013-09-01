@@ -17,11 +17,11 @@ private:
 	alias T ElementType;
 	alias N NumElements;
 	static if(is(T == float) || is(T == double) || is(T == real)) {
-		bool compareElement(size_t index, T value) const {
+		bool compareElement(size_t index, T value) @safe const pure nothrow {
 			return approxEqual(Elements[index], value);
 		}
 	} else {
-		bool compareElement(size_t index, T value) const {
+		bool compareElement(size_t index, T value) @safe const pure nothrow {
 			return Elements[index] == value;
 		}
 	}
@@ -301,7 +301,7 @@ public:
 	
 	/// Determines whether this vector is equal to the specified vector.
 	/// Params: other = The other vector to use for this operation.
-	bool Equals(const ref Vector!(N, T) other) const {
+	bool Equals(const ref Vector!(N, T) other) @safe const pure nothrow {
 		for(size_t i = 0; i < N; i++)
 			if(!compareElement(i, other.Elements[i]))
 				return false;
@@ -309,7 +309,7 @@ public:
 	}
 	
 	/// Overrides the equality operator.
-	bool opEquals(const ref Vector!(N, T) other) const {
+	bool opEquals(const ref Vector!(N, T) other) @safe const pure nothrow {
 		return Equals(other);
 	}
 	

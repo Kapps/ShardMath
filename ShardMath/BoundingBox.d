@@ -53,7 +53,7 @@ public:
 		return ContainmentType.Intersects;
 	}
 
-	bool opEquals(const ref BoundingBox Other) const {
+	bool opEquals(const ref BoundingBox Other) @safe const pure nothrow {
 		return Min == Other.Min && Max == Other.Max;
 	}
 

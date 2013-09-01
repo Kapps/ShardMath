@@ -149,7 +149,7 @@ public:
 		} else static assert(0, "Unsupported quaternions operator \'" ~ Op ~ "\'.");
 	}
 
-	bool opEquals(in Quaternion Other) const {
+	bool opEquals(in Quaternion Other) @safe const pure nothrow {
 		return approxEqual(X, Other.X) && approxEqual(Y, Other.Y) && approxEqual(Z, Other.Z) && approxEqual(W, Other.W);
 	}
 
