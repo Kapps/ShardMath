@@ -1,0 +1,14 @@
+{
+	"name": "shardmath",
+	"targetName": "ShardMath",
+	"targetType": "library",
+	"description": "An obsolete math library which exists only for retrieving dependencies for old code.",
+	"homepage": "https://shardsoft.com",
+	"license": "Boost",
+	"authors": [
+		"Ognjen Ivkovic"
+	],
+	"dependencies": {
+		"tested": "~master"
+	}
+}
