@@ -100,7 +100,7 @@ struct Vector(size_t N, T) if(N >= 2) {
 
 @safe pure nothrow:
 	
-	/// Initializes a nwe instance of the Vector structure.
+	/// Initializes a new instance of the Vector structure.
 	/// Params: val = The value to initialize all elements to.
 	this(T val) {
 		for(size_t i = 0; i < N; i++)
